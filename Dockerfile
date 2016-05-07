@@ -13,11 +13,11 @@ RUN pip install devpi-server==$DEVPI_SERVER_VERSION \
                 devpi-cleaner==$DEVPI_CLEANER_VERSION \
                 && rm -r /root/.cache
 
-ENV DEVPI_SERVERDIR /devpi
+ENV DEVPI_SERVERDIR /devpi/server
 
 RUN mkdir -p $DEVPI_SERVERDIR
 
-ENV DEVPI_CLIENTDIR /clientdir
+ENV DEVPI_CLIENTDIR /devpi/client
 
 RUN mkdir -p $DEVPI_CLIENTDIR
 
