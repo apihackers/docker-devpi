@@ -2,15 +2,9 @@ FROM apihackers/python3
 
 RUN apk add --update bash && rm -rf /var/cache/apk/*
 
-ENV DEVPI_SERVER_VERSION=3.1.0 \
-    DEVPI_WEB_VERSION=3.1.0 \
-    DEVPI_CLIENT_VERSION=2.6.2 \
-    DEVPI_CLEANER_VERSION=0.2.0
+COPY requirements.txt /tmp/requirements.txt
 
-RUN pip install devpi-server==$DEVPI_SERVER_VERSION \
-                devpi-web==$DEVPI_WEB_VERSION \
-                devpi-client==$DEVPI_CLIENT_VERSION \
-                devpi-cleaner==$DEVPI_CLEANER_VERSION \
+RUN pip install -r /tmp/requirements.txt\
                 && rm -r /root/.cache
 
 ENV DEVPI_SERVERDIR /devpi/server
