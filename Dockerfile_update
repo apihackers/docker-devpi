@@ -1,0 +1,7 @@
+FROM apihackers/python3
+
+RUN pip install virtualenv
+RUN virtualenv /tmp/pip-tools
+RUN /tmp/pip-tools/bin/pip install -U 'pip<8.1.2' pip-tools
+COPY requirements.in /
+CMD /tmp/pip-tools/bin/pip-compile /requirements.in
