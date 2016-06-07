@@ -12,7 +12,7 @@ shutdown() {
 trap shutdown SIGTERM SIGINT
 
 # Need $DEVPI_SERVERDIR
-devpi-server --start --host 0.0.0.0 --port $DEVPI_PORT
+devpi-server --start --host 0.0.0.0 --port $DEVPI_PORT --theme $DEVPI_THEME
 
 DEVPI_LOGS=$DEVPI_SERVERDIR/.xproc/devpi-server/xprocess.log
 

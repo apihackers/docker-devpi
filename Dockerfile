@@ -5,12 +5,15 @@ RUN apk add --update bash && rm -rf /var/cache/apk/*
 ENV DEVPI_SERVER_VERSION=4.0.0 \
     DEVPI_WEB_VERSION=3.1.0 \
     DEVPI_CLIENT_VERSION=2.6.3 \
-    DEVPI_CLEANER_VERSION=0.2.0
+    DEVPI_CLEANER_VERSION=0.2.0 \
+    DEVPI_SEMANTIC_UI_VERSION=0.1.0 \
+    DEVPI_THEME=semantic-ui
 
 RUN pip install devpi-server==$DEVPI_SERVER_VERSION \
                 devpi-web==$DEVPI_WEB_VERSION \
                 devpi-client==$DEVPI_CLIENT_VERSION \
                 devpi-cleaner==$DEVPI_CLEANER_VERSION \
+                devpi-semantic-ui==$DEVPI_SEMANTIC_UI_VERSION \
                 && rm -r /root/.cache
 
 ENV DEVPI_SERVERDIR /devpi/server
