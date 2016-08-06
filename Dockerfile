@@ -1,10 +1,10 @@
 FROM apihackers/python3
 
-RUN apk add --update bash && rm -rf /var/cache/apk/*
+RUN apk add --update --no-cache bash ca-certificates && update-ca-certificates
 
-ENV DEVPI_SERVER_VERSION=4.0.0 \
-    DEVPI_WEB_VERSION=3.1.0 \
-    DEVPI_CLIENT_VERSION=2.6.3 \
+ENV DEVPI_SERVER_VERSION=4.1.0 \
+    DEVPI_WEB_VERSION=3.1.1 \
+    DEVPI_CLIENT_VERSION=2.6.4 \
     DEVPI_CLEANER_VERSION=0.2.0 \
     DEVPI_SEMANTIC_UI_VERSION=0.1.0 \
     DEVPI_THEME=semantic-ui
