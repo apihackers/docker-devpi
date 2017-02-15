@@ -12,7 +12,7 @@ ENV DEVPI_SERVER_VERSION=4.2.1 \
     DEVPI_WEB_VERSION=3.1.1 \
     DEVPI_CLIENT_VERSION=2.7.0 \
     DEVPI_CLEANER_VERSION=0.2.0 \
-    DEVPI_SEMANTIC_UI_VERSION=0.2.1 \
+    DEVPI_SEMANTIC_UI_VERSION=0.2.2 \
     DEVPI_THEME=semantic-ui
 
 RUN apk add --no-cache --virtual .build-deps gcc python3-dev libffi-dev musl-dev \
