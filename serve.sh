@@ -11,6 +11,9 @@ shutdown() {
 
 trap shutdown SIGTERM SIGINT
 
+if [[ $initialize = yes ]]; then
+  devpi-server --init
+fi
 # Need $DEVPI_SERVERDIR
 devpi-server --start --host 0.0.0.0 --port $DEVPI_PORT --theme $DEVPI_THEME
 
